@@ -70,8 +70,12 @@ export function GetHours() {
   };
 
   const deleteSer = async (id) => {
-    const userDoc = doc(db, currentUser.email, id);
-    await deleteDoc(userDoc);
+    const check = prompt("Are You Sure You want to do this(type 'Yes' to confirm)")
+    if(check === 'Yes'){
+      const userDoc = doc(db, currentUser.email, id);
+      await deleteDoc(userDoc);
+
+    }
   }
 
 
